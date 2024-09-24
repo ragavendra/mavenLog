@@ -1,0 +1,7 @@
+# Start the embedded server
+embed-server
+# let the console display TRACE logs
+/subsystem=logging/console-handler=CONSOLE:write-attribute(name=level, value=TRACE)
+# create the logger for our code (with the name org.wildfly.examples corresponding to our package)
+/subsystem=logging/logger=org.eclipse.jakarta:add(level=TRACE)
+stop-embedded-server
